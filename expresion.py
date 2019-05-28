@@ -1,5 +1,4 @@
 
-"""Laboratorio#2"""
 """ El programa debe aceptar la siquiente expresion regular: (a|b)*abb"""
 
 ########################## Inicio del Automata ############################
@@ -18,7 +17,7 @@ def estado0():
 			break
 
 		else:
-			print("Error, cadena no es valida")
+			print("Error, cadena no es valida.")
 			break
 		pos +=1
 
@@ -35,9 +34,9 @@ def estado1(cadena, pos):
 		    print("Recorre del Estado1 al Estado2 :")
 		    estado2(cadena, inc)
 		else:
-			print("Error, cadena no es valida")
+			print("Error, cadena no es valida.")
 	else:
-		print("Error, La cadena no es valida")
+		print("Error, La cadena no es valida.")
 
 ########################## Fin del Estado1 ############################
 
@@ -52,20 +51,27 @@ def estado2(cadena, pos):
 			print ("Recorre del Estado2 al Estado3 :")
 	    		estado3(cadena,inc)
 	    	else:
-			print("Error, cadena no es valida")
+			print("Error, cadena no es valida.")
 	else:
-		print("Error, La cadena no es valida")
+		print("Error, La cadena no es valida.")
 
 ########################## Fin del Estado2 ############################
 
 def estado3(cadena, pos):
 	inc = pos+ 1
 	if inc < len(cadena):
-		if cadena[inc] =='a' or cadena[inc] == 'b':
-			print("Error, La cadena no es valida")
+		print(" la Cadena es valida.")
+		if cadena[inc] =='a':
+			#print(" *Exitos*, la primera cadena es valida.")
+			estado1(cadena, inc)
+		elif cadena[inc] == 'b':
+			#print(" *Exitos1*, la primera cadena es valida.")
+			estado4(cadena, inc)
+		else:
+			print("Error, La cadena no es valida.")
 		
 	elif cadena[pos] == 'b':
-		print(" la Cadena es valida.")
+		print(" la Cadena general es valida.")
 
 ########################## Fin del Estado3 ############################
 
@@ -80,12 +86,10 @@ def estado4(cadena, pos):
 	    		print ("Retorna del Estado4 al Estado4 :")
 	    		estado4(cadena, inc)	
 	    	else:
-			print("Error, cadena no valida")
+			print("Error, cadena no valida5")
 	else:
-		print("Error, La cadena no es valida")
+		print("Error, La cadena no es valida5.1")
 
 estado0()
 
 ########################## Fin del Estado4 ############################
-
-
